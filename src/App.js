@@ -21,7 +21,8 @@ class TodoList extends Component {
                 name: 'new todo list 3',
                 status : 0
             }],
-            finished: 0
+            finished: 0,
+            lastid: 2
         };
     }
     
@@ -77,7 +78,7 @@ class TodoList extends Component {
                     )}
                     <li>{this.state.finished} Finished/ {this.state.list.length} Total</li>
                 </ul>
-                <Dialog addNewTask={this.addTask.bind(this)} nums={this.state.list.length}/>
+                <Dialog addNewTask={this.addTask.bind(this)} nums={this.state.list[this.state.list.length-1].id}/>
             </div>
         );
     }
